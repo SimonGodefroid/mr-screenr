@@ -1,0 +1,19 @@
+{
+  "name": "Screenshot Extension",
+  "manifest_version": 2,
+  "version": "1.0",
+  "description": "Save web page screenshots to image files by one click",
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "js": ["content.js"],
+    "matches": ["<all_urls>"]
+  }],
+  "browser_action": {
+    "default_icon": "extension_icon.png",
+    "default_title": "Screenshot of this page"
+  },
+  "permissions": ["activeTab", "tabs", "<all_urls>"]
+}
